@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Fruit — 자연이 빚어낸 황금빛 별</title>
+    <meta name="description" content="동남아시아 청정 산지에서 자란 프리미엄 스타후르츠. 자르면 완벽한 별 모양이 되는 자연의 예술품을 만나보세요.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        star: {
+                            light: '#FEF3C7',
+                            DEFAULT: '#F59E0B',
+                            mid: '#D97706',
+                            dark: '#92400E',
+                            deep: '#451A03',
+                        },
+                        leaf: '#65A30D',
+                        cream: {
+                            DEFAULT: '#FFFBEB',
+                            warm: '#FEF3C7',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'Fraunces', 'serif'],
+                        display: ['Fraunces', '"Noto Serif KR"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-cream text-slate-800 font-sans selection:bg-star selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed w-full z-50 top-0 transition-all duration-500 bg-cream/70 backdrop-blur-xl border-b border-star/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <span class="text-2xl">⭐</span>
+                    <span class="text-star-dark text-2xl font-display font-bold tracking-wide italic group-hover:text-star-mid transition-colors duration-300">
+                        Starfruit
+                    </span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-star-dark font-bold px-3 py-2 text-sm tracking-wide transition-colors duration-300 border-b-2 border-star">홈페이지</a>
+                    <a href="#product"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">제품</a>
+                    <a href="#story"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">스토리</a>
+                    <a href="#contact"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">문의</a>
+                    <a href="en/index.html"
+                        class="ml-4 border border-star-mid text-star-mid hover:bg-star-mid hover:text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300">EN</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-star-mid focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden pb-4 space-y-2">
+                <a href="index.html" class="block px-4 py-2 text-star-dark font-bold">홈페이지</a>
+                <a href="#product" class="block px-4 py-2 text-slate-700 hover:text-star-mid">제품</a>
+                <a href="#story" class="block px-4 py-2 text-slate-700 hover:text-star-mid">스토리</a>
+                <a href="#contact" class="block px-4 py-2 text-slate-700 hover:text-star-mid">문의</a>
+                <a href="en/index.html" class="block px-4 py-2 text-star-dark font-bold">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-bg">
+        <!-- Floating stars decoration -->
+        <div class="floating-star absolute top-32 left-10 text-3xl opacity-40">⭐</div>
+        <div class="floating-star absolute top-1/2 left-20 text-2xl opacity-30" style="animation-delay: -2s;">✨</div>
+        <div class="floating-star absolute bottom-32 left-1/3 text-4xl opacity-20" style="animation-delay: -1s;">⭐</div>
+        <div class="floating-star absolute top-1/3 right-1/3 text-2xl opacity-30" style="animation-delay: -3s;">✨</div>
+
+        <!-- Decorative blurs -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-star/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-leaf/20 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Text -->
+            <div class="animate-fade-in-up">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                    ⭐ Tropical · Golden · Pure
+                </span>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-black leading-[1.15] mb-8 text-slate-900">
+                    자연이 빚어낸<br>
+                    <span class="text-star-mid italic font-display font-semibold">황금빛</span> 별
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl font-light">
+                    자르는 순간 펼쳐지는 완벽한 다섯 꼭짓점.<br class="hidden md:block">
+                    스타후르츠는 자연이 만든 가장 아름다운 예술품입니다.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="cta-primary group bg-star-mid text-white px-8 py-4 rounded-full font-bold tracking-wide shadow-xl shadow-star/40 hover:shadow-2xl hover:shadow-star/60 hover:bg-star-dark transition-all duration-300 transform hover:-translate-y-1">
+                        지금 만나보기
+                        <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </button>
+                    <button class="px-8 py-4 rounded-full font-bold tracking-wide text-slate-800 border-2 border-slate-300 hover:border-star-mid hover:text-star-mid transition-all duration-300">
+                        스토리 보기
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-200">
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">5★</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">완벽한 별 단면</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">91%</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">자연 수분</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">100%</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">무농약 인증</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="absolute inset-0 bg-gradient-to-tr from-star/40 to-leaf/30 rounded-[3rem] blur-2xl"></div>
+                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] bg-cream-warm">
+                    <img src="assets/star-fruit.png" alt="신선한 스타후르츠"
+                        onerror="this.src='https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=900&q=80'"
+                        class="w-full h-full object-cover">
+                    <!-- Floating badge -->
+                    <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
+                        <span class="text-xs font-bold text-star-dark tracking-wider">⭐ FRESH 2026</span>
+                    </div>
+                </div>
+                <!-- Decorative leaf -->
+                <div class="absolute -top-6 -left-6 text-6xl rotate-12 hidden md:block">🌴</div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 text-xs tracking-[0.3em] uppercase animate-bounce-slow">
+            ↓ Scroll
+        </div>
+    </header>
+
+    <!-- Why Section -->
+    <section id="product" class="relative py-24 md:py-32 bg-white overflow-hidden">
+        <!-- Background giant text -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 text-[20rem] text-star/5 font-display italic font-bold leading-none select-none pointer-events-none">
+            Star
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                    Why Starfruit
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                    왜 <span class="text-star-mid italic font-display">스타후르츠</span>일까요?
+                </h2>
+                <div class="w-16 h-1 bg-leaf mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                    한 입 베어물면 펼쳐지는 이국적 풍미와 시각적 즐거움. <br class="hidden md:block">
+                    세상 어떤 과일과도 다른 특별한 경험을 선사합니다.
+                </p>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">⭐</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        자연이 만든 별
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        가로로 자르는 순간 완벽한 다섯 꼭짓점의 별이 모습을 드러냅니다. 디저트 위에 올리면 어떤 플레이팅도 작품이 됩니다.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🍯</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        황금빛 새콤달콤
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        잘 익은 스타후르츠는 사과의 상큼함과 배의 청량함, 시트러스의 산미까지 동시에 느껴지는 복합적 풍미를 자랑합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">💧</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        91% 천연 수분
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        과육의 91%가 수분. 더위에 지친 몸을 단숨에 깨워주는 자연의 청량 음료, 칼로리는 낮고 만족감은 큽니다.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">✨</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        비타민 보물상자
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        비타민 C, 비타민 A, 폴리페놀, 식이섬유까지. 한 알에 담긴 이 영양 밀도가 놀라운 활력을 선물합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🍹</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        무한한 활용
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        샐러드, 디저트, 칵테일, 스무디, 잼까지. 껍질째 먹을 수 있는 깔끔한 식감으로 어떤 요리에도 어울립니다.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🌴</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        청정 트로피컬 산지
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        동남아시아 청정 농원의 충분한 햇살과 비옥한 토양에서 천천히 영글어, 자연 그대로의 풍미를 그대로 담았습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="relative py-24 md:py-32 bg-gradient-to-br from-star-dark via-star-mid to-star-deep overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-star/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-leaf/15 rounded-full blur-3xl"></div>
+        <div class="floating-star absolute top-20 right-20 text-5xl text-white/10">⭐</div>
+        <div class="floating-star absolute bottom-20 right-1/3 text-3xl text-white/10" style="animation-delay: -2s;">✨</div>
+
+        <div class="relative max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-white">
+                <span class="inline-block py-1 px-4 rounded-full bg-white/15 text-cream text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                    Our Story
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                    태양이 빚고,<br>
+                    <span class="font-display italic text-cream">바람이 다듬은</span>
+                </h2>
+                <p class="text-lg text-white/90 leading-relaxed mb-6 font-light">
+                    스타후르츠는 적도의 따스한 햇살과 풍부한 빗물 속에서 천천히, 그러나 단단히 영글어갑니다.
+                </p>
+                <p class="text-lg text-white/90 leading-relaxed mb-10 font-light">
+                    수확의 순간은 오직 손으로, 한 알 한 알 정성껏. 우리는 자연의 시간에 맞추되, 가장 빛나는 순간을 놓치지 않습니다.
+                    매년 한정된 수량 속에서 가장 고른 별 모양과 가장 균형 잡힌 맛만을 골라 여러분께 전합니다.
+                </p>
+                <div class="flex items-center gap-6 pt-8 border-t border-white/20">
+                    <div>
+                        <div class="font-display text-4xl font-bold text-cream">2019</div>
+                        <div class="text-sm text-white/70 tracking-wider">설립 연도</div>
+                    </div>
+                    <div class="w-px h-12 bg-white/20"></div>
+                    <div>
+                        <div class="font-display text-4xl font-bold text-cream">7,200+</div>
+                        <div class="text-sm text-white/70 tracking-wider">행복한 고객</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1601493700518-4733c5d672a4?w=900&q=80" 
+                         alt="스타후르츠 농장" class="w-full h-full object-cover"
+                         onerror="this.src='https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=900&q=80'">
+                </div>
+                <!-- Floating quote card -->
+                <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl max-w-xs hidden md:block">
+                    <div class="text-star-mid text-3xl font-serif leading-none mb-2">"</div>
+                    <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                        한 알의 별에 한 계절의 햇살이 담겨 있습니다.
+                    </p>
+                    <div class="text-xs text-slate-500 mt-3 font-medium">— 김농부, Star Orchard</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 md:py-32 bg-cream">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                    Order Now
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                    당신을 위한 <span class="font-display italic text-star-mid">완벽한</span> 별
+                </h2>
+                <div class="w-16 h-1 bg-leaf mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                    혼자 즐길 분도, 선물할 분도, 가족과 나눌 분도. 모두를 위한 패키지가 준비되어 있습니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Tier 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                    <div class="text-5xl mb-6">⭐</div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">스타터</h3>
+                    <p class="text-slate-500 text-sm mb-6">스타후르츠 4입 / 약 600g</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold text-slate-900">19,800</span>
+                        <span class="text-slate-500 ml-1">원</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 프리미엄 스타후르츠 4입
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 친환경 패키지
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 신선 보냉 포장
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors duration-300">
+                        구매하기
+                    </button>
+                </div>
+
+                <!-- Tier 2 - Featured -->
+                <div class="bg-gradient-to-b from-star-mid to-star-dark rounded-3xl p-8 shadow-2xl shadow-star/40 hover:-translate-y-2 transition-all duration-500 flex flex-col relative md:scale-105 text-white">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cream text-star-dark font-bold px-4 py-1.5 rounded-full text-xs tracking-wider shadow-lg">
+                        ⭐ BEST SELLER
+                    </div>
+                    <div class="text-5xl mb-6">🎁</div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">시그니처 박스</h3>
+                    <p class="text-white/80 text-sm mb-6">스타후르츠 8입 / 약 1.2kg</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold">36,000</span>
+                        <span class="text-white/80 ml-1">원</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> 프리미엄 스타후르츠 8입
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> 우아한 선물 박스 포장
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> 무료 카드 동봉
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> 무료 배송
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full bg-cream text-star-dark font-bold hover:bg-white hover:shadow-lg transition-all duration-300">
+                        지금 주문하기
+                    </button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                    <div class="text-5xl mb-6">🍽️</div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">패밀리 세트</h3>
+                    <p class="text-slate-500 text-sm mb-6">스타후르츠 16입 / 약 2.4kg</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold text-slate-900">62,000</span>
+                        <span class="text-slate-500 ml-1">원</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 프리미엄 스타후르츠 16입
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 가족용 대용량
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 분할 포장 가능
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 무료 배송
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full border-2 border-star-mid text-star-mid font-bold hover:bg-star-mid hover:text-white transition-colors duration-300">
+                        구매하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                Contact Us
+            </span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                <span class="font-display italic text-star-mid">궁금한 점</span>이 있으신가요?
+            </h2>
+            <p class="text-lg text-slate-600 mb-12 font-light">
+                스타후르츠에 대해 더 알고 싶다면 언제든 연락주세요. <br class="hidden md:block">
+                여러분의 모든 문의에 정성껏 답변드립니다.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:hello@starfruit.kr"
+                   class="bg-star-mid text-white px-8 py-4 rounded-full font-bold tracking-wide shadow-xl shadow-star/40 hover:shadow-2xl hover:bg-star-dark transition-all duration-300 transform hover:-translate-y-1">
+                    📧 이메일 보내기
+                </a>
+                <a href="tel:1588-0000"
+                   class="px-8 py-4 rounded-full font-bold tracking-wide text-slate-800 border-2 border-slate-300 hover:border-star-mid hover:text-star-mid transition-all duration-300">
+                    📞 1588-0000
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-star-deep text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">⭐</span>
+                        <div class="font-display text-3xl font-bold italic text-cream">Starfruit</div>
+                    </div>
+                    <p class="text-white/70 leading-relaxed font-light max-w-md">
+                        자연이 빚어낸 황금빛 별. 청정 트로피컬 산지에서 정성껏 길러낸 프리미엄 스타후르츠를 만나보세요.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-cream">바로가기</h4>
+                    <ul class="space-y-2 text-white/70 text-sm font-light">
+                        <li><a href="#product" class="hover:text-white transition">제품</a></li>
+                        <li><a href="#story" class="hover:text-white transition">스토리</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">문의</a></li>
+                        <li><a href="en/index.html" class="hover:text-white transition">English</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-cream">고객센터</h4>
+                    <ul class="space-y-2 text-white/70 text-sm font-light">
+                        <li>📞 1588-0000</li>
+                        <li>📧 hello@starfruit.kr</li>
+                        <li>평일 09:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center text-white/50 text-sm font-light">
+                <p>&copy; 2026 Starfruit Landing Page. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

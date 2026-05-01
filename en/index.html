@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starfruit — A Golden Star Crafted by Nature</title>
+    <meta name="description" content="Premium star fruit grown in pristine tropical orchards. Discover nature's most beautiful artwork — a perfect star revealed in every slice.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        star: {
+                            light: '#FEF3C7',
+                            DEFAULT: '#F59E0B',
+                            mid: '#D97706',
+                            dark: '#92400E',
+                            deep: '#451A03',
+                        },
+                        leaf: '#65A30D',
+                        cream: {
+                            DEFAULT: '#FFFBEB',
+                            warm: '#FEF3C7',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                        display: ['Fraunces', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-cream text-slate-800 font-sans selection:bg-star selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed w-full z-50 top-0 transition-all duration-500 bg-cream/70 backdrop-blur-xl border-b border-star/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <span class="text-2xl">⭐</span>
+                    <span class="text-star-dark text-2xl font-display font-bold tracking-wide italic group-hover:text-star-mid transition-colors duration-300">
+                        Starfruit
+                    </span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-star-dark font-bold px-3 py-2 text-sm tracking-wide transition-colors duration-300 border-b-2 border-star">Home</a>
+                    <a href="#product"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">Product</a>
+                    <a href="#story"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">Story</a>
+                    <a href="#contact"
+                        class="text-slate-700 hover:text-star-mid px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>
+                    <a href="../index.html"
+                        class="ml-4 border border-star-mid text-star-mid hover:bg-star-mid hover:text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300">KO</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-star-mid focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden pb-4 space-y-2">
+                <a href="index.html" class="block px-4 py-2 text-star-dark font-bold">Home</a>
+                <a href="#product" class="block px-4 py-2 text-slate-700 hover:text-star-mid">Product</a>
+                <a href="#story" class="block px-4 py-2 text-slate-700 hover:text-star-mid">Story</a>
+                <a href="#contact" class="block px-4 py-2 text-slate-700 hover:text-star-mid">Contact</a>
+                <a href="../index.html" class="block px-4 py-2 text-star-dark font-bold">KO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-bg">
+        <div class="floating-star absolute top-32 left-10 text-3xl opacity-40">⭐</div>
+        <div class="floating-star absolute top-1/2 left-20 text-2xl opacity-30" style="animation-delay: -2s;">✨</div>
+        <div class="floating-star absolute bottom-32 left-1/3 text-4xl opacity-20" style="animation-delay: -1s;">⭐</div>
+        <div class="floating-star absolute top-1/3 right-1/3 text-2xl opacity-30" style="animation-delay: -3s;">✨</div>
+
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-star/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-leaf/20 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in-up">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                    ⭐ Tropical · Golden · Pure
+                </span>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] mb-8 text-slate-900">
+                    A Golden Star,<br>
+                    <span class="text-star-mid italic">Crafted</span> by Nature
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl font-light">
+                    A perfect five-pointed star, revealed with every slice.<br class="hidden md:block">
+                    Starfruit is nature's most beautiful work of art.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="cta-primary group bg-star-mid text-white px-8 py-4 rounded-full font-bold tracking-wide shadow-xl shadow-star/40 hover:shadow-2xl hover:shadow-star/60 hover:bg-star-dark transition-all duration-300 transform hover:-translate-y-1">
+                        Discover Now
+                        <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </button>
+                    <button class="px-8 py-4 rounded-full font-bold tracking-wide text-slate-800 border-2 border-slate-300 hover:border-star-mid hover:text-star-mid transition-all duration-300">
+                        Our Story
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-200">
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">5★</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">Star Cross-Section</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">91%</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">Natural Hydration</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-star-mid">100%</div>
+                        <div class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">Pesticide-Free</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="absolute inset-0 bg-gradient-to-tr from-star/40 to-leaf/30 rounded-[3rem] blur-2xl"></div>
+                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] bg-cream-warm">
+                    <img src="../assets/star-fruit.png" alt="Fresh Starfruit"
+                        onerror="this.src='https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=900&q=80'"
+                        class="w-full h-full object-cover">
+                    <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
+                        <span class="text-xs font-bold text-star-dark tracking-wider">⭐ FRESH 2026</span>
+                    </div>
+                </div>
+                <div class="absolute -top-6 -left-6 text-6xl rotate-12 hidden md:block">🌴</div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 text-xs tracking-[0.3em] uppercase animate-bounce-slow">
+            ↓ Scroll
+        </div>
+    </header>
+
+    <!-- Why Section -->
+    <section id="product" class="relative py-24 md:py-32 bg-white overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 text-[20rem] text-star/5 font-display italic font-bold leading-none select-none pointer-events-none">
+            Star
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                    Why Starfruit
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                    Why <span class="text-star-mid italic">Starfruit</span>?
+                </h2>
+                <div class="w-16 h-1 bg-leaf mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                    An exotic flavor and visual delight in every bite. <br class="hidden md:block">
+                    Unlike any other fruit in the world.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">⭐</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        Nature's Star
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        A perfect five-pointed star reveals itself the moment you slice. Place one on any dessert and instantly turn it into a work of art.
+                    </p>
+                </div>
+
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🍯</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        Golden Sweet & Tangy
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        A ripe starfruit blends apple's crispness, pear's freshness, and citrus zing — a complex flavor profile in a single bite.
+                    </p>
+                </div>
+
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">💧</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        91% Natural Hydration
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        91% water content means instant refreshment on hot days. Low calories, high satisfaction — nature's best beverage.
+                    </p>
+                </div>
+
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">✨</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        Vitamin Treasure
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        Vitamin C, vitamin A, polyphenols, and dietary fiber — incredible nutrient density packed into one golden star.
+                    </p>
+                </div>
+
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🍹</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        Endless Versatility
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        Salads, desserts, cocktails, smoothies, jams — eat the skin and all. The ultimate ingredient for any dish.
+                    </p>
+                </div>
+
+                <div class="feature-card group bg-cream rounded-3xl p-10 border border-star/10 hover:border-star/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-16 h-16 rounded-2xl bg-star/15 group-hover:bg-star-mid flex items-center justify-center text-3xl mb-6 transition-all duration-500">
+                        <span class="group-hover:scale-110 transition-transform duration-500">🌴</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3 group-hover:text-star-mid transition-colors">
+                        Pristine Tropical Origin
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        Slowly ripened under abundant Southeast Asian sunshine and rich soil — the truest flavor of nature itself.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="relative py-24 md:py-32 bg-gradient-to-br from-star-dark via-star-mid to-star-deep overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-star/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-leaf/15 rounded-full blur-3xl"></div>
+        <div class="floating-star absolute top-20 right-20 text-5xl text-white/10">⭐</div>
+        <div class="floating-star absolute bottom-20 right-1/3 text-3xl text-white/10" style="animation-delay: -2s;">✨</div>
+
+        <div class="relative max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-white">
+                <span class="inline-block py-1 px-4 rounded-full bg-white/15 text-cream text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                    Our Story
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                    Shaped by Sun,<br>
+                    <span class="italic text-cream">Polished by Wind</span>
+                </h2>
+                <p class="text-lg text-white/90 leading-relaxed mb-6 font-light">
+                    Starfruit ripens slowly but steadily, basking in equatorial sunshine and nourished by tropical rains.
+                </p>
+                <p class="text-lg text-white/90 leading-relaxed mb-10 font-light">
+                    Every harvest is done by hand, fruit by fruit, with care. We move at nature's pace, never missing the perfect moment.
+                    From each year's limited harvest, only the most evenly-pointed stars with the most balanced flavor reach you.
+                </p>
+                <div class="flex items-center gap-6 pt-8 border-t border-white/20">
+                    <div>
+                        <div class="font-display text-4xl font-bold text-cream">2019</div>
+                        <div class="text-sm text-white/70 tracking-wider">Founded</div>
+                    </div>
+                    <div class="w-px h-12 bg-white/20"></div>
+                    <div>
+                        <div class="font-display text-4xl font-bold text-cream">7,200+</div>
+                        <div class="text-sm text-white/70 tracking-wider">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1601493700518-4733c5d672a4?w=900&q=80" 
+                         alt="Starfruit Orchard" class="w-full h-full object-cover"
+                         onerror="this.src='https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=900&q=80'">
+                </div>
+                <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl max-w-xs hidden md:block">
+                    <div class="text-star-mid text-3xl font-serif leading-none mb-2">"</div>
+                    <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                        Every star carries a season of sunshine.
+                    </p>
+                    <div class="text-xs text-slate-500 mt-3 font-medium">— Mr. Kim, Star Orchard</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 md:py-32 bg-cream">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                    Order Now
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                    The <span class="italic text-star-mid">Perfect Star</span> for You
+                </h2>
+                <div class="w-16 h-1 bg-leaf mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                    For yourself, for gifts, for family. A package crafted for every occasion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Starter -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                    <div class="text-5xl mb-6">⭐</div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Starter</h3>
+                    <p class="text-slate-500 text-sm mb-6">4 starfruits / approx. 600g</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold text-slate-900">$18</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 4 premium starfruits
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> Eco-friendly packaging
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> Insulated freshness pack
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors duration-300">
+                        Buy Now
+                    </button>
+                </div>
+
+                <!-- Signature -->
+                <div class="bg-gradient-to-b from-star-mid to-star-dark rounded-3xl p-8 shadow-2xl shadow-star/40 hover:-translate-y-2 transition-all duration-500 flex flex-col relative md:scale-105 text-white">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cream text-star-dark font-bold px-4 py-1.5 rounded-full text-xs tracking-wider shadow-lg">
+                        ⭐ BEST SELLER
+                    </div>
+                    <div class="text-5xl mb-6">🎁</div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">Signature Box</h3>
+                    <p class="text-white/80 text-sm mb-6">8 starfruits / approx. 1.2kg</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold">$32</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> 8 premium starfruits
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> Elegant gift box
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> Free greeting card
+                        </li>
+                        <li class="flex items-start text-sm">
+                            <span class="text-cream mr-2">✓</span> Free shipping
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full bg-cream text-star-dark font-bold hover:bg-white hover:shadow-lg transition-all duration-300">
+                        Order Now
+                    </button>
+                </div>
+
+                <!-- Family -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                    <div class="text-5xl mb-6">🍽️</div>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Family Set</h3>
+                    <p class="text-slate-500 text-sm mb-6">16 starfruits / approx. 2.4kg</p>
+                    <div class="mb-8">
+                        <span class="font-display text-5xl font-bold text-slate-900">$56</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> 16 premium starfruits
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> Family-size package
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> Split packaging available
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <span class="text-star-mid mr-2">✓</span> Free shipping
+                        </li>
+                    </ul>
+                    <button class="w-full py-3.5 rounded-full border-2 border-star-mid text-star-mid font-bold hover:bg-star-mid hover:text-white transition-colors duration-300">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-star/15 text-star-dark text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                Contact Us
+            </span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                Have a <span class="italic text-star-mid">Question</span>?
+            </h2>
+            <p class="text-lg text-slate-600 mb-12 font-light">
+                Want to know more about Starfruit? Reach out anytime. <br class="hidden md:block">
+                We'll answer every question with care.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:hello@starfruit.kr"
+                   class="bg-star-mid text-white px-8 py-4 rounded-full font-bold tracking-wide shadow-xl shadow-star/40 hover:shadow-2xl hover:bg-star-dark transition-all duration-300 transform hover:-translate-y-1">
+                    📧 Send Email
+                </a>
+                <a href="tel:1588-0000"
+                   class="px-8 py-4 rounded-full font-bold tracking-wide text-slate-800 border-2 border-slate-300 hover:border-star-mid hover:text-star-mid transition-all duration-300">
+                    📞 +82 1588-0000
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-star-deep text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">⭐</span>
+                        <div class="font-display text-3xl font-bold italic text-cream">Starfruit</div>
+                    </div>
+                    <p class="text-white/70 leading-relaxed font-light max-w-md">
+                        A golden star crafted by nature. Meet the premium starfruit grown with care in pristine tropical orchards.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-cream">Quick Links</h4>
+                    <ul class="space-y-2 text-white/70 text-sm font-light">
+                        <li><a href="#product" class="hover:text-white transition">Product</a></li>
+                        <li><a href="#story" class="hover:text-white transition">Story</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="../index.html" class="hover:text-white transition">한국어</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-cream">Customer Service</h4>
+                    <ul class="space-y-2 text-white/70 text-sm font-light">
+                        <li>📞 +82 1588-0000</li>
+                        <li>📧 hello@starfruit.kr</li>
+                        <li>Mon-Fri 09:00 - 18:00 KST</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center text-white/50 text-sm font-light">
+                <p>&copy; 2026 Starfruit Landing Page. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
